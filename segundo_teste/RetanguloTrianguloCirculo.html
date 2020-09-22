@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Programação parte 02</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <canvas width="600" height="400"></canvas>
+  <script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle ='lighthgrey'; /*cor do canvas até a area que delimitei*/
+    pincel.fillRect(0, 0, 600, 400); /*pincel do ponto x, y nas dimensoes de 600 largura e 400 altura*/
+
+    pincel.fillStyle = 'green';
+    pincel.fillRect(0, 0, 200, 400);
+
+    pincel.fillStyle = 'red';
+    pincel.fillRect(400, 0, 200, 400);
+
+    /*fazer um triângulo*/
+
+    pincel.fillStyle = 'yellow';
+    pincel.beginPath();
+    pincel.moveTo(300,200);
+    pincel.lineTo(200, 400);
+    pincel.lineTo(400, 400);
+    pincel.fill();
+
+    pincel.fillStyle = 'blue';
+    pincel.beginPath();
+    pincel.arc(300, 200, 50, 0, 2 * 3.14);
+    pincel.fill();
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desenhando Gráficos Comparativos</title>
+</head>
+<body>
+  <canvas width="600" height="400"></canvas>
+  <script>
+
+    function desenharBarra(x, y, serie, cores, texto){
+      var tela = document.querySelector('canvas');
+      var pincel = tela.getContext('2d');
+      var largura = 150;
+
+      var altura = y
+      for (var pos = 0; pos < serie.length; pos += 1){
+        pincel.fillStyle = cores[pos];
+        pincel.fillRect(x, y, largura, serie[pos]);
+        pincel.strokeStyle = 'black'
+        pincel.strokeRect(x, y, largura, serie[pos]);
+        y += serie[pos]
+
+      }
+
+      desenharTexto(texto, x, altura - 20);
+
+
+    }
+
+    function desenharTexto(texto, x, y) {
+      var tela = document.querySelector('canvas');
+      var pincel = tela.getContext('2d');
+      pincel.font = '20px Georgia';
+      pincel.fillStyle = 'black';
+      pincel.fillText(texto, x, y);
+    }
+
+    var serie2015 = [50, 25, 20, 5];
+    var serie2016 = [65, 20, 13, 2];
+    var cores = ['yellow', 'red', 'purple', 'blue'];
+    desenharBarra(100, 100, serie2015, cores, '2015');
+    desenharBarra(300, 100, serie2016, cores, '2016');
+
+
+
+
+  </script>
+
+
+</body>
+</html>

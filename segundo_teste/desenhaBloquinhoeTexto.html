@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frações de bloquinhos e textos </title>
+</head>
+<body>
+
+  <canvas width="600" height="400"></canvas>
+
+  <script>
+
+    function bloquinhos (x, y, tamanho, cor) {
+      var tela = document.querySelector('canvas');
+      var pincel = tela.getContext('2d');
+
+      pincel.fillStyle = cor;
+      pincel.fillRect(x, y, 50, 50);
+      pincel.strokeStyle = 'black';
+      pincel.strokeRect(x, y, 50, 50);
+    }
+
+    function desenhaTexto(texto, x , y) {
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.font='20px Georgia';
+    pincel.fillStyle='black';
+    pincel.fillText(texto, x, y);
+}
+
+    bloquinhos(0, 50, 0, 'green');
+    bloquinhos(50, 50, 0, 'green');
+    bloquinhos(100, 50, 0, 'green');
+    bloquinhos(150, 50, 0, 'transparent');
+
+
+
+    desenhaTexto("Qual é a fração?", 0, 30);
+
+    desenhaTexto('Que saudade dos meus gatos Mozart e Tempestade.', 100, 200);
+
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>
